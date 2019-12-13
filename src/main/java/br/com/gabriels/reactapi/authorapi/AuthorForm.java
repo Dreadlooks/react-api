@@ -1,11 +1,14 @@
 package br.com.gabriels.reactapi.authorapi;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
 public class AuthorForm {
 
     @NotBlank
+    @JsonProperty("name")
     private String author;
 
     @NotBlank
