@@ -36,24 +36,24 @@ public class AuthorController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<AuthorsJson> save(@RequestBody @Valid AuthorForm form) {
+    public ResponseEntity<AuthorJson> save(@RequestBody @Valid AuthorForm form) {
         Author author = form.toModel();
         authorRepository.save(author);
-        return findAll();
+        return ResponseEntity.ok(new AuthorJson(author));
     }
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<AuthorsJson> update(@PathVariable("id") Long id, @RequestBody @Valid AuthorForm form) {
+    public ResponseEntity<AuthorJson> update(@PathVariable("id") Long id, @RequestBody @Valid AuthorForm form) {
         Optional<Author> possibleAuthor = authorRepository.findById(id);
 
         if (possibleAuthor.isPresent()) {
             Author author = form.update(possibleAuthor.get());
             authorRepository.save(author);
-            return ResponseEntity.ok(findAll()).getBody();
+            return ResponseEntity.ok(new AuthorJson(author));
         }
 
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.badRequest().build();
     }
 
     @DeleteMapping("/{id}")
