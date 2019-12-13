@@ -62,14 +62,4 @@ public class AuthorController {
 
         return findAll();
     }
-
-    @GetMapping("/book")
-    public BooksJson findAllBooks() {
-        return new BooksJson(authorRepository.findAll());
-    }
-
-//    @GetMapping("/name")
-//    public AuthorNameDto findAllNames() {
-//        return new AuthorsJson(authorRepository.findAll());
-//    }
 }
