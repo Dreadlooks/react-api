@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/author")
+@RequestMapping("/api/authors")
 public class AuthorController {
 
     @Autowired
@@ -62,4 +62,14 @@ public class AuthorController {
 
         return findAll();
     }
+
+    @GetMapping("/book")
+    public BooksJson findAllBooks() {
+        return new BooksJson(authorRepository.findAll());
+    }
+
+//    @GetMapping("/name")
+//    public AuthorNameDto findAllNames() {
+//        return new AuthorsJson(authorRepository.findAll());
+//    }
 }

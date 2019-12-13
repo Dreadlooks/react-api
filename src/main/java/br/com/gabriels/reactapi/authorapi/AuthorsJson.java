@@ -7,11 +7,11 @@ public class AuthorsJson {
 
     private String message;
 
-    private List<Data> data;
+    private List<AuthorDto> data;
 
     public AuthorsJson(List<Author> authors) {
         this.message = "success";
-        this.data = authors.stream().map(Data::new).collect(Collectors.toList());
+        this.data = authors.stream().map(AuthorDto::new).collect(Collectors.toList());
     }
 
     public String getMessage() {
@@ -22,11 +22,11 @@ public class AuthorsJson {
         this.message = message;
     }
 
-    public List<Data> getData() {
+    public List<AuthorDto> getData() {
         return data;
     }
 
-    public void setData(List<Data> data) {
+    public void setData(List<AuthorDto> data) {
         this.data = data;
     }
 }

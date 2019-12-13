@@ -4,11 +4,11 @@ public class AuthorJson {
 
     private String message;
 
-    private Data data;
+    private AuthorDto data;
 
     public AuthorJson(Author author) {
         this.message = "sucess";
-        this.data = new Data(author);
+        this.data = new AuthorDto(author);
     }
 
     public String getMessage() {
@@ -19,11 +19,11 @@ public class AuthorJson {
         this.message = message;
     }
 
-    public Data getData() {
+    public AuthorDto getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(AuthorDto data) {
         this.data = data;
     }
 }

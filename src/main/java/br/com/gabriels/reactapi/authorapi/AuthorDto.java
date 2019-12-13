@@ -1,6 +1,6 @@
 package br.com.gabriels.reactapi.authorapi;
 
-public class Data {
+public class AuthorDto {
 
     private Long id;
 
@@ -10,7 +10,7 @@ public class Data {
 
     private int price;
 
-    public Data(Author author) {
+    public AuthorDto(Author author) {
         this.id = author.getId();
         this.author = author.getAuthor();
         this.book = author.getBook();
@@ -32,4 +32,5 @@ public class Data {
     public int getPrice() {
         return price;
     }
+
 }
