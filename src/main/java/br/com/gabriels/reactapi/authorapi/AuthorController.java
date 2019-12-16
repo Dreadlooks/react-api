@@ -57,9 +57,9 @@ public class AuthorController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<AuthorsJson> deleteById(@PathVariable("id") Long id) {
+    public ResponseEntity<String> deleteById(@PathVariable("id") Long id) {
         authorRepository.deleteById(id);
 
-        return findAll();
+        return ResponseEntity.ok("{\"message\": \"deleted\"}");
     }
 }
