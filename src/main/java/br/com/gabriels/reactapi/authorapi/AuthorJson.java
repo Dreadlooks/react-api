@@ -7,7 +7,7 @@ public class AuthorJson {
     private AuthorDto data;
 
     public AuthorJson(Author author) {
-        this.message = "sucess";
+        this.message = "success";
         this.data = new AuthorDto(author);
     }
 
