@@ -8,7 +8,6 @@ import javax.validation.constraints.NotBlank;
 public class AuthorForm {
 
     @NotBlank
-    @JsonProperty("name")
     private String author;
 
     @NotBlank
